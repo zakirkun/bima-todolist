@@ -1,0 +1,10 @@
+version: '3'
+tasks:
+    commit:
+        cmds:
+            - git commit -am "{{.CLI_ARGS}}"
+            - git push
+    release:
+        cmds:
+            - git tag -a {{.CLI_ARGS}} -m "release {{.CLI_ARGS}}"
+            - git push origin {{.CLI_ARGS}}
